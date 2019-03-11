@@ -67,6 +67,7 @@ TODO: ## Webpack
   - WatchIgnorePlugin
 - proxy
 - Source maps
+- **Tree shaking**
 - **Web workers**
 
 - webpack dev server
