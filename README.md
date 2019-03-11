@@ -39,6 +39,7 @@ TODO: ## ESLint
 - Custom rules
 - Jest test environment
 - parser: babel-eslint
+- plugins: react-hooks
 
 TODO: ## Jest
 
