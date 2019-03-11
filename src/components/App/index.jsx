@@ -4,9 +4,9 @@ import { hot } from 'react-hot-loader'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import AppContent from '../AppContent'
+// import AppContent from '../AppContent'
 
-import AppStateProvider from './AppStateProvider'
+// import AppStateProvider from './AppStateProvider'
 
 import './style.less'
 
@@ -31,9 +31,10 @@ function App() {
     return (
         <MuiThemeProvider theme={theme}>
             <CssBaseline />
-            <AppStateProvider>
+            App
+            {/* <AppStateProvider>
                 <AppContent />
-            </AppStateProvider>
+            </AppStateProvider> */}
         </MuiThemeProvider>
     )
 }

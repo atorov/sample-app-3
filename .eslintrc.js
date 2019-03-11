@@ -1,10 +1,11 @@
 module.exports = {
     extends: 'airbnb',
-    parser: "babel-eslint",
+    parser: 'babel-eslint',
     // https://github.com/eslint/eslint#what-about-experimental-features
-    // plugins: [
-    //     "babel"
-    // ],
+    plugins: [
+        // 'babel',
+        'react-hooks'
+    ],
     rules: {
         'brace-style': ['error', 'stroustrup'],
         'camelcase': 0,

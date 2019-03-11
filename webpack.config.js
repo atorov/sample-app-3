@@ -23,7 +23,7 @@ const NODE_ENV = process.env.NODE_ENV
 const MODE = NODE_ENV !== 'development' ? 'production' : 'development'
 process.env.BABEL_ENV = MODE
 
-const APP_NAME = TARGET + '-' + JSON.stringify(pkg.name).replace(/['"]+/g, '')
+const APP_NAME = JSON.stringify(pkg.name).replace(/['"]+/g, '')
 const APP_VERSION = JSON.stringify(pkg.version)
 
 const config = {
@@ -37,9 +37,9 @@ const config = {
         // https://github.com/gatsbyjs/gatsby/issues/11934
         // https://github.com/gaearon/react-hot-loader/tree/7089062eac273832102c074a368d5af27e23e0b0#webpack-plugin
         // https://github.com/gaearon/react-hot-loader/issues/1188
-        // alias: {
-        //     'react-dom': '@hot-loader/react-dom',
-        // },
+        alias: {
+            'react-dom': '@hot-loader/react-dom',
+        },
     },
 
     // The base directory, an absolute path, for resolving entry points and loaders from configuration.
@@ -259,7 +259,7 @@ if (MODE === 'development') {
 
     // Webpack will generate source maps automatically for you in development mode.
     // The inline source map is valuable during development due to better performance.
-    // config.devtool = 'source-map'
+    config.devtool = 'source-map'
 
     // WDS
     config.devServer = {

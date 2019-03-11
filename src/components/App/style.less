@@ -1,0 +1,24 @@
+// // The way you write your CSS definition matters.
+// // To make sure you are getting the benefit from the newer formats,
+// // they should become first in the definition.
+// // This way the browser picks them up.
+// @font-face {
+//     font-family: "roboto_normal";
+//     src:
+//         url("../../assets/fonts/roboto/roboto_normal.woff")format("woff") // ,
+//         // url("./assets/fonts/roboto/roboto_normal.woff2") format("woff2"),
+//         // url("./assets/fonts/roboto/roboto_normal.eot") format("embedded-opentype"),
+//         // url("./assets/fonts/roboto/roboto_normal.ttf") format("truetype");
+//     /* Add other formats as you see fit */
+// }
+
+
+#app-root {
+    font-family: Roboto, sans-serif;
+
+    .container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}

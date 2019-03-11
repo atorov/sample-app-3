@@ -23,15 +23,12 @@ setTimeout(() => {
     console.log('::: module.hot:', !!module.hot)
     console.log('::: APP_NAME:', APP_NAME)
     console.log('::: APP_VERSION:', APP_VERSION)
-    console.log('::: TARGET:', TARGET)
     console.log('::: Build Date:', buildDate)
     console.log('::: ::: :::')
 
     render(
         // <StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>,
+        <App />,
         // </StrictMode>,
         document.querySelector('#app-root'),
     )
