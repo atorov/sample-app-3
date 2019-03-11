@@ -1,0 +1,29 @@
+{
+  "name": "sample-app-3",
+  "version": "3.0.1",
+  "private": true,
+  "description": "Just a sample app, version 3",
+  "keywords": [
+    "react",
+    "sample",
+    "boilerplate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atorov/sample-app-3.git"
+  },
+  "bugs": "https://github.com/atorov/sample-app-3.git/issues",
+  "author": "atorov",
+  "license": "MIT",
+  "main": "src/index.jsx",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "build": "npm run build:prod",
+    "build:prod": "npm run clean && NODE_ENV=production webpack",
+    "build:prod:stats": "npm run clean && NODE_ENV=production webpack --json > stats.json --profile --progress --display-reasons",
+    "serve": "npm run build:prod && serve ./build/www",
+    "start": "nodemon --watch webpack.*.js --exec \"NODE_ENV=development PORT=9080 webpack-dev-server\"",
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
