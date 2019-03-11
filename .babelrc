@@ -1,0 +1,74 @@
+{
+    "env": {
+        "production": {
+            "plugins": [
+                "@babel/plugin-syntax-dynamic-import"
+            ],
+            "presets": [
+                [
+                    "@babel/preset-env",
+                    {
+                        "useBuiltIns": "entry"
+                    }
+                ],
+                [
+                    "@babel/preset-react",
+                    {
+                        "useBuiltIns": true
+                    }
+                ]
+            ]
+        },
+
+        "development": {
+            "plugins": [
+                "@babel/plugin-syntax-dynamic-import",
+                "react-hot-loader/babel"
+            ],
+            "presets": [
+                [
+                    "@babel/preset-env",
+                    {
+                        "modules": false,
+                        "useBuiltIns": "entry"
+                    }
+                ],
+                [
+                    "@babel/preset-react",
+                    {
+                        "useBuiltIns": true
+                    }
+                ]
+            ]
+        },
+
+        "test": {
+            "plugins": [
+                "@babel/plugin-syntax-dynamic-import"
+            ],
+            "presets": [
+                [
+                    "@babel/preset-env",
+                    {
+                        "useBuiltIns": "entry"
+                    }
+                ],
+                [
+                    "@babel/preset-react",
+                    {
+                        "useBuiltIns": true
+                    }
+                ]
+            ]
+        }
+    },
+
+    "ignore": [
+        "__storage__",
+        "build",
+        "dist",
+        "docs",
+        "externals",
+        "node_modules"
+    ]
+}
