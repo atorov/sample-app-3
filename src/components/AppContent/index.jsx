@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-// import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -10,7 +10,7 @@ import checkSignedIn from '../../lib/check-signed-in'
 import { AppDispatchContext, AppStateContext } from '../App/AppStateProvider'
 import { AuthStateContext } from '../App/AuthStateProvider'
 
-// import LeftBar from '../LeftBar'
+import LeftBar from '../LeftBar'
 // import Routes from '../Routes'
 import TopBar from '../TopBar'
 
@@ -23,10 +23,6 @@ function AppContent({ classes }) {
 
     const {
         ui: {
-            // patientBanner: {
-            //     isVisible: isPatientBannerVisible,
-            //     height: patientBannerHeight,
-            // },
             topBar: {
                 isVisible: isTopBarVisible,
                 height: topBarHeight,
@@ -43,25 +39,29 @@ function AppContent({ classes }) {
             type: 'appState/ui/PATCH_TOP_BAR',
             payload: { isVisible: isSignedIn },
         })
+        appDispatch({
+            type: 'appState/ui/PATCH_LEFT_BAR',
+            payload: { isVisible: isSignedIn },
+        })
     }, [appDispatch, isSignedIn])
 
     const offsetTop = isTopBarVisible ? topBarHeight : 0
 
     return (
-        // <BrowserRouter basename="/provider-portal">
-        <div className={classes.root}>
-            {isTopBarVisible ? <TopBar /> : null}
-            {/* <LeftBar /> */}
-            <main
-                id="app-main"
-                className={classes.content}
-                style={{ marginTop: offsetTop }}
-            >
-                App Content
-                {/* <Routes /> */}
-            </main>
-        </div>
-        // </BrowserRouter>
+        <BrowserRouter basename="/">
+            <div className={classes.root}>
+                <TopBar />
+                <LeftBar />
+                <main
+                    id="app-main"
+                    className={classes.content}
+                    style={{ marginTop: offsetTop }}
+                >
+                    App Content
+                    {/* <Routes /> */}
+                </main>
+            </div>
+        </BrowserRouter>
     )
 }
 

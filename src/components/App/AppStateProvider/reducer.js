@@ -6,18 +6,18 @@ export default function (state, action) {
         case 'appState/INIT':
             return { ...initState }
 
-            // ui
-            // case 'appState/ui/PATCH_LEFT_BAR':
-            //     return {
-            //         ...state,
-            //         ui: {
-            //             ...state.ui,
-            //             leftBar: {
-            //                 ...state.ui.leftBar,
-            //                 ...action.payload,
-            //             },
-            //         },
-            //     }
+        // ui
+        case 'appState/ui/PATCH_LEFT_BAR':
+            return {
+                ...state,
+                ui: {
+                    ...state.ui,
+                    leftBar: {
+                        ...state.ui.leftBar,
+                        ...action.payload,
+                    },
+                },
+            }
 
         case 'appState/ui/PATCH_TOP_BAR':
             return {

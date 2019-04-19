@@ -13,15 +13,27 @@ import Typography from '@material-ui/core/Typography'
 import IAccountCircle from '@material-ui/icons/AccountCircle'
 import IMenu from '@material-ui/icons/Menu'
 
-import { AppDispatchContext } from '../App/AppStateProvider'
+import { AppDispatchContext, AppStateContext } from '../App/AppStateProvider'
 import { AuthDispatchContext } from '../App/AuthStateProvider'
 
 function TopBar({ classes }) {
     const appDispatch = useContext(AppDispatchContext)
 
+    const {
+        ui: {
+            topBar: {
+                isVisible: isTopBarVisible,
+            },
+        },
+    } = useContext(AppStateContext)
+
     const authDispatch = useContext(AuthDispatchContext)
 
     const [userMenuAnchorEl, setUserMenuAnchorEl] = useState(null)
+
+    if (!isTopBarVisible) {
+        return null
+    }
 
     return (
         <>
