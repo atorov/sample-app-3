@@ -3,6 +3,7 @@
         "camelcase",
         "crossorigin",
         "devtool",
+        "haspopup",
         "plusplus",
         "polyfill",
         "stroustrup"

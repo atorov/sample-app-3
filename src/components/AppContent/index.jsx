@@ -5,74 +5,57 @@ import PropTypes from 'prop-types'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-// import checkSignedIn from '../../../lib/check-signed-in'
+import checkSignedIn from '../../lib/check-signed-in'
 
-// import { AppDispatchContext, AppStateContext } from '../App/AppStateProvider'
-// import { AuthStateContext } from '../App/AuthStateProvider'
-// import { PatientStateContext } from '../App/PatientStateProvider'
+import { AppDispatchContext, AppStateContext } from '../App/AppStateProvider'
+import { AuthStateContext } from '../App/AuthStateProvider'
 
 // import LeftBar from '../LeftBar'
-// import PatientBanner from '../PatientBanner'
 // import Routes from '../Routes'
-// import TopBarL1 from '../TopBarL1'
+import TopBar from '../TopBar'
 
 // import useInitOnAuth from './use-init-on-auth'
 
 function AppContent({ classes }) {
     //     useInitOnAuth()
 
-    //     const appDispatch = useContext(AppDispatchContext)
+    const appDispatch = useContext(AppDispatchContext)
 
-    //     const {
-    //         ui: {
-    //             patientBanner: {
-    //                 isVisible: isPatientBannerVisible,
-    //                 height: patientBannerHeight,
-    //             },
-    //             topBarL1: {
-    //                 isVisible: isTopBarL1Visible,
-    //                 publicHeight: topBarL1_PublicHeight,
-    //                 privateHeight: topBarL1_PrivateHeight,
-    //             },
-    //         },
-    //     } = useContext(AppStateContext)
+    const {
+        ui: {
+            // patientBanner: {
+            //     isVisible: isPatientBannerVisible,
+            //     height: patientBannerHeight,
+            // },
+            topBar: {
+                isVisible: isTopBarVisible,
+                height: topBarHeight,
+            },
+        },
+    } = useContext(AppStateContext)
 
-    //     const authState = useContext(AuthStateContext)
+    const authState = useContext(AuthStateContext)
 
-    //     const { selected: { status: selectedPatientStatus } } = useContext(PatientStateContext)
+    const isSignedIn = checkSignedIn(authState)
 
-    //     const isSignedIn = checkSignedIn(authState)
+    useEffect(() => {
+        appDispatch({
+            type: 'appState/ui/PATCH_TOP_BAR',
+            payload: { isVisible: isSignedIn },
+        })
+    }, [appDispatch, isSignedIn])
 
-    //     useEffect(() => {
-    //         appDispatch({
-    //             type: 'appState/ui/PATCH_PATIENT_BANNER',
-    //             payload: { isVisible: selectedPatientStatus === ':READY:' },
-    //         })
-    //     }, [appDispatch, selectedPatientStatus])
-
-    //     let offsetTop = 0
-    //     if (isTopBarL1Visible) {
-    //         if (isSignedIn) {
-    //             offsetTop += topBarL1_PrivateHeight
-    //         }
-    //         else {
-    //             offsetTop += topBarL1_PublicHeight
-    //         }
-    //     }
-    //     if (isPatientBannerVisible) {
-    //         offsetTop += patientBannerHeight
-    //     }
+    const offsetTop = isTopBarVisible ? topBarHeight : 0
 
     return (
         // <BrowserRouter basename="/provider-portal">
         <div className={classes.root}>
-            {/* <TopBarL1 /> */}
-            {/* <PatientBanner /> */}
+            {isTopBarVisible ? <TopBar /> : null}
             {/* <LeftBar /> */}
             <main
                 id="app-main"
                 className={classes.content}
-            // style={{ marginTop: offsetTop }}
+                style={{ marginTop: offsetTop }}
             >
                 App Content
                 {/* <Routes /> */}

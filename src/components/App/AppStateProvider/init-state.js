@@ -6,10 +6,9 @@ export default {
             isExpanded: true,
             isVisible: true,
         },
-        topBarL1: {
+        topBar: {
             isVisible: true,
-            publicHeight: 100,
-            privateHeight: 64,
+            height: 64,
         },
     },
 }
