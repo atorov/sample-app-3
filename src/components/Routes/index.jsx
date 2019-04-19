@@ -25,6 +25,7 @@ const CPage11 = lazy(() => import('../Page11'))
 const CPage12 = lazy(() => import('../Page12'))
 const CPage2 = lazy(() => import('../Page2'))
 const CSignIn = lazy(() => import('../SignIn'))
+const CWorker = lazy(() => import('../Worker'))
 
 function Routes({ history }) {
     const unlisten = useRef()
@@ -80,6 +81,12 @@ function Routes({ history }) {
                         path="/page2"
                         exact
                         PrivateComponent={CPage2}
+                    />
+
+                    <PrivateRoute
+                        path="/worker"
+                        exact
+                        PrivateComponent={CWorker}
                     />
 
                     <Redirect to="/not-found" />

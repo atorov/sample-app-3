@@ -90,10 +90,20 @@ function LeftBar({
             isActive: pathname === '/page2',
             isSubItem: false,
             Icon: IApps,
-            label: 'Page 2',
+            label: 'Page 2 (This should be a super lo-o-o-o-o-o-o-o-o-o-ong title)',
             hasBorderBottom: true,
             linkTo: '/page2',
             onClick: () => console.log('::: >>> Page 2'),
+        },
+        {
+            id: 'item-web-worker',
+            isActive: pathname === '/worker',
+            isSubItem: false,
+            Icon: IApps,
+            label: 'Web Worker Demo',
+            hasBorderBottom: true,
+            linkTo: '/worker',
+            onClick: () => console.log('::: >>> Worker'),
         },
     ]
 
