@@ -49,7 +49,8 @@ const config = {
     // context: path.resolve(__dirname, '...')
 
     entry: [
-        '@babel/polyfill',
+        'core-js/stable',
+        'regenerator-runtime/runtime',
         'whatwg-fetch',
         SRC,
     ],
@@ -276,14 +277,25 @@ if (MODE === 'development') {
         host: HOST, // Defaults to `localhost`
         port: PORT, // Defaults to 8080
 
+        // The bundled files will be available in the browser under this path.
+        // Imagine that the server is running under http://localhost:8080
+        // and output.filename is set to bundle.js.
+        // By default the publicPath is "/",
+        // so your bundle is available as http://localhost:8080/bundle.js.
+        // The publicPath can be changed so the bundle is put in a different directory.
+        // Make sure publicPath always starts and ends with a forward slash.
+        // It is also possible to use a full URL.This is necessary for Hot Module Replacement.
+        // It is recommended that devServer.publicPath is the same as output.publicPath.
+        // publicPath: '/',
+
         // Enables HTML5 history API based routing
         historyApiFallback: true,
+        // historyApiFallback: {
+        //     index: `/something/index.html`,
+        // },
 
         // Bypassing host checking
         disableHostCheck: true,
-
-        // Adds headers to all responses
-        // headers: { 'Access-Control-Allow-Origin': '*' },
 
         // Open the page in browser
         // open: true,
@@ -312,18 +324,14 @@ if (MODE === 'development') {
             // What is the difference between watchOptions.ignored and webpack.WatchIgnorePlugin
             // issue: https://stackoverflow.com/questions/48361956/what-is-the-difference-between-watchoptions-ignored-and-webpack-watchignoreplugi
             ignored: EXCLUDE_DEFAULT,
-
-            // The bundled files will be available in the browser under this path.
-            // Imagine that the server is running under http://localhost:8080
-            // and output.filename is set to bundle.js.
-            // By default the publicPath is "/",
-            // so your bundle is available as http://localhost:8080/bundle.js.
-            // The publicPath can be changed so the bundle is put in a different directory.
-            // Make sure publicPath always starts and ends with a forward slash.
-            // It is also possible to use a full URL.This is necessary for Hot Module Replacement.
-            // It is recommended that devServer.publicPath is the same as output.publicPath.
-            // publicPath: '/',
         },
+
+        // Adds headers to all responses
+        // headers: {
+        //     'Access-Control-Allow-Origin': '*',
+        //     'Access-Control-Allow-Methods': 'GET',
+        //     'Access-Control-Allow-Headers': 'authorization, x-library',
+        // },
 
         // proxy: [
         //     {
