@@ -2,11 +2,7 @@
 
 A boilerplate project
 
-TODO: ![alt application demo](https://github.com/atorov/sample-app-2/blob/dev/src/assets/img/demo/screen-demo.gif)
-
-TODO: Check the online version [here](http://sample-app-2.surge.sh/).
-
-TODO: ## Babel
+## Babel
 
 - Environments
 - plugins:
@@ -16,23 +12,9 @@ TODO: ## Babel
   - @babel/preset-env
   - @babel/preset-react
 
-TODO: ## Browser List
+## Browser List
 
-TODO: ## Dependencies
-
-- Axios
-- Babel 7
-- ESLint 5
-- Jest 23
-- jQuery 3
-- Less 3
-- Lodash 4
-- Material UI 3.9
-- React 16.8
-- Redux 4
-- Webpack 4
-
-TODO: ## ESLint
+## ESLint
 
 - extends: airbnb
 - Custom globals
@@ -46,7 +28,7 @@ TODO: ## Jest
 - Coverage report
 - Watch mode
 
-TODO: ## Webpack
+## Webpack
 
 - autoprefixer
 - babel-loader
