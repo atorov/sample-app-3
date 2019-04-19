@@ -11,7 +11,7 @@ import { AppDispatchContext, AppStateContext } from '../App/AppStateProvider'
 import { AuthStateContext } from '../App/AuthStateProvider'
 
 import LeftBar from '../LeftBar'
-// import Routes from '../Routes'
+import Routes from '../Routes'
 import TopBar from '../TopBar'
 
 import useInitOnAuth from './use-init-on-auth'
@@ -57,8 +57,7 @@ function AppContent({ classes }) {
                     className={classes.content}
                     style={{ marginTop: offsetTop }}
                 >
-                    App Content
-                    {/* <Routes /> */}
+                    <Routes />
                 </main>
             </div>
         </BrowserRouter>
