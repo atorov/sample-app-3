@@ -14,10 +14,10 @@ import { AuthStateContext } from '../App/AuthStateProvider'
 // import Routes from '../Routes'
 import TopBar from '../TopBar'
 
-// import useInitOnAuth from './use-init-on-auth'
+import useInitOnAuth from './use-init-on-auth'
 
 function AppContent({ classes }) {
-    //     useInitOnAuth()
+    useInitOnAuth()
 
     const appDispatch = useContext(AppDispatchContext)
 
