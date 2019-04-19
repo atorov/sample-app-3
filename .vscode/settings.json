@@ -6,6 +6,7 @@
         "haspopup",
         "plusplus",
         "polyfill",
-        "stroustrup"
+        "stroustrup",
+        "unlisten"
     ]
 }
