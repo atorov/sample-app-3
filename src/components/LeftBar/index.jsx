@@ -18,7 +18,11 @@ import IApps from '@material-ui/icons/Apps'
 
 import { AppStateContext } from '../App/AppStateProvider'
 
-function LeftBar({ classes, match, theme }) {
+function LeftBar({
+    classes,
+    location: { pathname },
+    theme,
+}) {
     const {
         ui: {
             leftBar: {
@@ -43,7 +47,7 @@ function LeftBar({ classes, match, theme }) {
     const items = [
         {
             id: 'item-home',
-            isActive: match.path === '/',
+            isActive: pathname === '/',
             isSubItem: false,
             Icon: IApps,
             label: 'Home',
@@ -53,7 +57,7 @@ function LeftBar({ classes, match, theme }) {
         },
         {
             id: 'item-page-1',
-            isActive: match.path === '/page1',
+            isActive: pathname === '/page1',
             isSubItem: false,
             Icon: IApps,
             label: 'Page 1',
@@ -63,7 +67,7 @@ function LeftBar({ classes, match, theme }) {
         },
         {
             id: 'sub-item-page-11',
-            isActive: match.path === '/page1/page11',
+            isActive: pathname === '/page1/page11',
             isSubItem: true,
             Icon: IApps,
             label: 'Page 11',
@@ -73,7 +77,7 @@ function LeftBar({ classes, match, theme }) {
         },
         {
             id: 'sub-item-page-12',
-            isActive: match.path === '/page1/page12',
+            isActive: pathname === '/page1/page12',
             isSubItem: true,
             Icon: IApps,
             label: 'Page 12',
@@ -83,7 +87,7 @@ function LeftBar({ classes, match, theme }) {
         },
         {
             id: 'item-page-2',
-            isActive: match.path === '/page2',
+            isActive: pathname === '/page2',
             isSubItem: false,
             Icon: IApps,
             label: 'Page 2',
@@ -156,7 +160,7 @@ function LeftBar({ classes, match, theme }) {
 
 LeftBar.propTypes = {
     classes: PropTypes.object.isRequired,
-    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
 }
 
@@ -199,7 +203,9 @@ export default withStyles(theme => ({
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
     },
-    listSubItem: {},
+    listSubItem: {
+        backgroundColor: theme.palette.grey['100'],
+    },
     paper: {
         top: 'inherit',
         width: 'inherit',
