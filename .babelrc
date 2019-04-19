@@ -8,7 +8,11 @@
                 [
                     "@babel/preset-env",
                     {
-                        "useBuiltIns": "entry"
+                        "useBuiltIns": "entry",
+                        "corejs": {
+                            "version": 3,
+                            "proposals": true
+                        }
                     }
                 ],
                 [
@@ -19,7 +23,6 @@
                 ]
             ]
         },
-
         "development": {
             "plugins": [
                 "@babel/plugin-syntax-dynamic-import",
@@ -30,7 +33,11 @@
                     "@babel/preset-env",
                     {
                         "modules": false,
-                        "useBuiltIns": "entry"
+                        "useBuiltIns": "entry",
+                        "corejs": {
+                            "version": 3,
+                            "proposals": true
+                        }
                     }
                 ],
                 [
@@ -41,7 +48,6 @@
                 ]
             ]
         },
-
         "test": {
             "plugins": [
                 "@babel/plugin-syntax-dynamic-import"
@@ -50,7 +56,11 @@
                 [
                     "@babel/preset-env",
                     {
-                        "useBuiltIns": "entry"
+                        "useBuiltIns": "entry",
+                        "corejs": {
+                            "version": 3,
+                            "proposals": true
+                        }
                     }
                 ],
                 [
@@ -62,7 +72,6 @@
             ]
         }
     },
-
     "ignore": [
         "__storage__",
         "build",
