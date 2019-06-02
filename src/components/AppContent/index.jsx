@@ -72,9 +72,9 @@ export default withStyles(theme => ({
     content: {
         flexGrow: 1,
         paddingTop: 0,
-        paddingRight: theme.spacing.unit * 3,
-        paddingBottom: theme.spacing.unit * 8,
-        paddingLeft: theme.spacing.unit * 3,
+        paddingRight: theme.spacing(3),
+        paddingBottom: theme.spacing(8),
+        paddingLeft: theme.spacing(3),
     },
     root: {
         display: 'flex',

@@ -23,9 +23,6 @@ const theme = createMuiTheme({
     //         main: '#...',
     //     },
     // },
-    typography: {
-        useNextVariants: true,
-    },
 })
 
 function App() {
